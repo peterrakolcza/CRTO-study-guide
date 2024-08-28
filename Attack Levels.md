@@ -2,6 +2,8 @@
 level: 1
 ---
 
+![[final.webp]]
+
 1. [[External Reconnaissance]]
 2. [[Initial Compromise]]
 3. [[Host Reconnaissance]]

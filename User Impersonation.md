@@ -239,7 +239,7 @@ Rubeus `triage` will show all the tickets that are currently cached.  TGTs ca
 We can simply extract this TGT and leverage it via a new logon session.
 
 1. [[Rubeus#dump]]
-2. [[Rubeus#createonly]]
+2. [[Rubeus#createonly#Pass the Ticket]]
 3. `beacon> steal_token <PID>`
 
 We can also obtain TGTs for computer accounts by forcing them to authenticate remotely to this machine. We will utilise Rubeus' `monitor` command.  This will drop into loop and continuously monitor for and extract new TGT as they get cached.  It's a superior strategy when compared to running triage manually because there's little chance of us not seeing or missing a ticket.

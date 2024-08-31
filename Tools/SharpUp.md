@@ -7,7 +7,7 @@
 Lists services with unquoted paths.
 
 ```
-C:\Tools\SharpUp\SharpUp\bin\Release\SharpUp.exe audit UnquotedServicePath
+execute-assembly C:\Tools\SharpUp\SharpUp\bin\Release\SharpUp.exe audit UnquotedServicePath
 ```
 
 ### audit ModifiableServices
@@ -15,5 +15,5 @@ C:\Tools\SharpUp\SharpUp\bin\Release\SharpUp.exe audit UnquotedServicePath
 Lists modifiable services.
 
 ```
-C:\Tools\SharpUp\SharpUp\bin\Release\SharpUp.exe audit ModifiableServices
+execute-assembly C:\Tools\SharpUp\SharpUp\bin\Release\SharpUp.exe audit ModifiableServices
 ```

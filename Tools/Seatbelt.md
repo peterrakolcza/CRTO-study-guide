@@ -5,7 +5,7 @@
 ### Host Enumeration
 
 ```
-C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe -group=system
+execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe -group=system
 ```
 
 ### OSInfo
@@ -13,7 +13,7 @@ C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe -group=system
 Gathers OS information.
 
 ```
-C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe OSInfo -ComputerName=web
+execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe OSInfo -ComputerName=web
 ```
 
 
@@ -22,7 +22,7 @@ C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe OSInfo -ComputerName=web
 Enumerates Windows Vault.
 
 ```
-C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe WindowsVault
+execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe WindowsVault
 ```
 
 ### WindowsCredentialFiles
@@ -30,7 +30,7 @@ C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe WindowsVault
 Enumerates Windows Credential Files.
 
 ```
-C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe WindowsCredentialFiles
+execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe WindowsCredentialFiles
 ```
 
 ### Certificates
@@ -38,7 +38,7 @@ C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe WindowsCredentialFiles
 Enumerates ADCS certificates.
 
 ```
-C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe Certificates
+execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe Certificates
 ```
 
 ### TokenPrivileges
@@ -46,5 +46,5 @@ C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe Certificates
 Enumerates user privileges.
 
 ```
-C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe TokenPrivileges
+execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe TokenPrivileges
 ```

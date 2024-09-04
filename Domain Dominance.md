@@ -12,7 +12,7 @@ Use Rubeus to forge a service ticket for nlamb and the CIFS service.
 
 Then import the ticket.
 
-[[Rubeus#createonly#Pass the Ticket]]
+[[Rubeus#createnetonly#Pass the Ticket]]
 
 ```
 steal_token <PID>
@@ -45,7 +45,7 @@ The ticket can be forged offline using Rubeus.
 
 And then imported into a logon session to use.
 
-[[Rubeus#createonly#Pass the Ticket]]
+[[Rubeus#createnetonly#Pass the Ticket]]
 
 ```
 steal_token <PID>

@@ -5,5 +5,5 @@
 ---
 
 ```
-C:\Tools\SharpView\SharpView\bin\Release\SharpView.exe Get-Domain
+execute-assembly C:\Tools\SharpView\SharpView\bin\Release\SharpView.exe Get-Domain
 ```

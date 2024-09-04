@@ -1,3 +1,5 @@
+![[rto_lab.webp]]
+
 ## Tools to Use
 
 ---

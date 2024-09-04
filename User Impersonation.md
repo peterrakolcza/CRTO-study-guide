@@ -60,7 +60,7 @@ Two opportunities to detect PTH are the R/W handle to LSASS; and looking for the
 
 Pass the ticket is a technique that allows you to add Kerberos tickets to an existing logon session (LUID) that you have access to, or a new one you create.  Accessing a remote resource will then allow that authentication to happen via Kerberos.
 
-1. Create a "sacrificial" logon session that we can pass the TGT into. [[Rubeus#createonly]]
+1. Create a "sacrificial" logon session that we can pass the TGT into. [[Rubeus#createnetonly]]
 2. Pass the TGT into this new LUID. [[Rubeus#ptt]]
 3. Impersonate the process we created with `steal_token`
 ```
@@ -239,7 +239,7 @@ Rubeus `triage` will show all the tickets that are currently cached.  TGTs ca
 We can simply extract this TGT and leverage it via a new logon session.
 
 1. [[Rubeus#dump]]
-2. [[Rubeus#createonly]]
+2. [[Rubeus#createnetonly#Pass the Ticket]]
 3. `beacon> steal_token <PID>`
 
 We can also obtain TGTs for computer accounts by forcing them to authenticate remotely to this machine. We will utilise Rubeus' `monitor` command.  This will drop into loop and continuously monitor for and extract new TGT as they get cached.  It's a superior strategy when compared to running triage manually because there's little chance of us not seeing or missing a ticket.
@@ -268,7 +268,7 @@ To find computers configured for constrained delegation, search for those whose 
 1. [[ADSearch#Enumerate Computers and Users for Constrained Delegation]]
 2. Perform delegation with [[Rubeus#dump]] (You can also request one with Rubeus `asktgt` if you have NTLM or AES hashes.)
 3. [[Rubeus#s4u]]
-4. Grab the final S4U2Proxy ticket and pass it into a new logon session with [[Rubeus#createonly#Pass the Ticket]]
+4. Grab the final S4U2Proxy ticket and pass it into a new logon session with [[Rubeus#createnetonly#Pass the Ticket]]
 5. `beacon> steal_token <PID>`
 
 
@@ -284,8 +284,8 @@ Furthermore, the SPN information in the ticket (i.e. the sname field) is not enc
 
 We can be abuse this using `/altservice` flag in Rubeus.  In this example, I'm using the same TGT for SQL-2 to request a TGS for LDAP instead of CIFS.
 
-1. [[Rubeus#s4u self#altservice]]
-2. [[Rubeus#createonly#Pass the Ticket]]
+1. [[Rubeus#s4u#altservice]]
+2. [[Rubeus#createnetonly#Pass the Ticket]]
 3. `steal_token <PID>`
 
 Against a domain controller, the LDAP service allows us to perform a [[Credential Theft#DCSync]]
@@ -301,7 +301,7 @@ In the Unconstrained Delegation module, we obtained a TGT for the domain control
 This is because machines do not get remote local admin access to themselves.  What we can do instead is abuse S4U2Self to obtain a usable TGS as a user we know _is_ a local admin (e.g. a domain admin).  Rubeus has a `/self` flag for this purpose.
 
 1. [[Rubeus#s4u self]]
-2. [[Rubeus#createonly#Pass the Ticket]]
+2. [[Rubeus#createnetonly#Pass the Ticket]]
 3. `steal_token <PID>`
 
 

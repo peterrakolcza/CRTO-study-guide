@@ -151,6 +151,11 @@ Use [[SharpUp#audit ModifiableServices]].
 
 [This](https://rohnspowershellblog.wordpress.com/2013/03/19/viewing-service-acls/) PowerShell script will print which service rights we have.
 
+```
+powershell-import C:\Tools\Get-ServiceAcl.ps1
+powershell Get-ServiceACL -name VulnService2 | Select -expand access
+```
+
 We can abuse these weak permissions by changing the binary path of the service - so instead of it running `C:\Program Files\Vulnerable Services\Service 2.exe`, we can have it run something like `C:\Temp\payload.exe`.
 
 1. Validate that the current path is `"C:\Program Files\Vulnerable Services\Service 2.exe"`:

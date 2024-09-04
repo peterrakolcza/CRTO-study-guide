@@ -172,3 +172,18 @@ hashcat.exe -a 0 -m 13100 hashes wordlist
 ```
 hashcat.exe -a 0 -m 18200 squid_svc wordlist
 ```
+
+Insert `$23$` after `$krb5asrep` in the hash.
+
+
+### Crack MsCacheV2
+
+Format:
+
+```
+$DCC2$10240#username#hash
+```
+
+```
+hashcat -a 0 -m 2100
+```
